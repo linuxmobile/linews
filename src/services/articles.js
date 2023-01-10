@@ -1,4 +1,4 @@
-import { apiURL } from './config'
+import { apiURL } from '@services/config'
 
 export const getArticles = async (page = 1) => {
 	const url = `${apiURL}?per_page=12&page=${page}`
