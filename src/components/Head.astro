@@ -1,0 +1,35 @@
+---
+const {
+    title = 'IntegradorJS',
+    description = 'Bienvenido a casa <3',
+    image = ''
+} = Astro.props
+---
+<head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width' />
+    <title>{title}</title>
+    <meta name='description' content={description} />
+    <meta name='theme-color' content='#fff600' />
+    <link rel='icon' href='/favicon.svg' type='image/svg+xml' />
+    <link rel='mask-icon' href='/mask-icon.svg' color='#000000' />
+
+    <meta property='og:url' content='https://integradorJS.linu.dev/' />
+    <meta property='og:type' content='website' />
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={description} />
+    <meta property='og:image' content={image} />
+
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta name='twitter:site' content='@linuxmobileok' />
+    <meta name='twitter:creator' content='@linuxmobileok' />
+    <meta name='twitter:title' content={title} />
+    <meta name='twitter:description' content={description} />
+    <meta name='twitter:image' content={image} />
+
+    <link rel="preload" href="/Mona-Sans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/Hubot-Sans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/main.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+</head>
