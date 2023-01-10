@@ -1,11 +1,11 @@
 import { apiURL } from './config'
 
-export const getTopArticles = async () => {
-	const url = 'https://dev.to/api/articles?per_page=12'
+export const getArticles = async (page = 1) => {
+	const url = `${apiURL}?per_page=12&page=${page}`
 	try {
 		const response = await fetch(url)
-		const topArticles = await response.json()
-		return topArticles
+		const articles = await response.json()
+		return articles
 	} catch (e) {
 		console.log(e)
 		return null
