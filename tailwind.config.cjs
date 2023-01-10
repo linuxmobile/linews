@@ -5,9 +5,9 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				'mona-sans': ['Mona Sans'],
-				'hubot-sans': ['Hubot Sans'],
+				'hubot-sans': ['Hubot Sans']
 			}
-		},
+		}
 	},
-	plugins: [],
+	plugins: []
 }
