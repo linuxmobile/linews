@@ -6,7 +6,9 @@
 </section>
 <script>
 	import { scrollHandler, init } from '@services/articles'
+	import { bookmarkHandler } from '@services/bookmark'
 
+	bookmarkHandler()
 	init()
 	scrollHandler()
 </script>
