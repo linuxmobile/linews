@@ -22,3 +22,23 @@
 		font-family: 'Mona Sans';
 	}
 }
+
+/* Replace selection color 🕶️ */
+::-moz-selection { /* Code for Firefox */
+    background: var(--soft-coffee);
+  } 
+  ::selection {
+    background: var(--soft-coffee);
+  }
+/* Scrollbar design */
+::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+  }
+::-webkit-scrollbar-corner {
+    background: #BFBFBF;
+  }
+::-webkit-scrollbar-thumb {
+    background: #BFBFBF;
+    border-radius: 6px;
+  }
