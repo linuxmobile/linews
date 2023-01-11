@@ -7,8 +7,14 @@
 <script type='module'>
 	const APIURL = 'https://dev.to/api/articles'
 	const POSTSECTION = document.querySelector('#homePosts')
+	const BOOKMARK = document.querySelector('#bookmark')
 	let page = 1
 	let pageSize = 24
+
+	let bookmark = JSON.parse(localStorage.getItem("bookmark")) || []
+    const SAVETOLOCALSTORAGE = (bookmarks) => {
+        return localStorage.setItem("bookmark", JSON.stringify(bookmarks))
+    }
 
 	const getArticles = async () => {
 		const url = `${APIURL}?state=fresh&per_page=${pageSize}&page=${page}`
@@ -26,15 +32,19 @@
 		if (!posts.cover_image) {
 			return
 		}
-		const { title, description, cover_image, readable_publish_date, url } = posts
+		const { title, social_image, readable_publish_date, url } = posts
 		return `
-			<div class='flex flex-col items-center justify-center max-w-xs min-h-[380px] bg-[#1C1F26] border-[1px] border-[#a8b3cf33] rounded-lg py-2 px-2 gap-3'>
-				<div class="flex flex-col items-start px-4 gap-2">
-					<a href='${url}' class='font-extrabold text-xl'>${title}</a>
-					<p class='text-left'>${readable_publish_date}</p>
+			<div class='flex flex-col items-center justify-center max-w-xs min-h-[380px] bg-[#1C1F26] border-[1px] border-[#a8b3cf33] rounded-xl py-2 px-2 gap-3'>
+				<div class='flex justify-end w-full px-2'>
+					<i class='fa-regular fa-bookmark bg-slate-700 h-8 w-8 flex items-center justify-center rounded-full' id='bookmark'></i>
 				</div>
-				<img src='${cover_image}' class='rounded-xl'/>
-				<p class='px-4'>${description}</p>
+				<div class='flex flex-col items-start px-4 gap-2 min-h-[130px]'>
+					<a href='${url}' class='font-extrabold text-xl'>${title}</a>
+					<p class='text-left text-sm'>${readable_publish_date}</p>
+				</div>
+				<img src='${social_image}' class='rounded-xl'/>
+				<div class=''>
+				</div>
 			</div>
 		`
 	}
