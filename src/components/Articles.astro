@@ -1,0 +1,87 @@
+---
+---
+
+<section class='flex'>
+	<div class='flex items-center justify-center flex-wrap gap-x-6 gap-y-4' id='homePosts'></div>
+</section>
+<script type='module'>
+	const APIURL = 'https://dev.to/api/articles'
+	const POSTSECTION = document.querySelector('#homePosts')
+	let page = 1
+	let pageSize = 24
+
+	const getArticles = async () => {
+		const url = `${APIURL}?state=fresh&per_page=${pageSize}&page=${page}`
+		try {
+			const response = await fetch(url)
+			const articles = await response.json()
+			return articles
+		} catch (e) {
+			console.log(e)
+			return null
+		}
+	}
+
+	const renderPosts = (posts) => {
+		if (!posts.cover_image) {
+			return
+		}
+		const { title, description, cover_image, readable_publish_date, url } = posts
+		return `
+			<div class='flex flex-col max-w-xs gap-2 min-h-[350px]'>
+				<a href='${url}' class='font-extrabold text-2xl'>${title}</a>
+					<img src='${cover_image}' class='' />
+					<div class=''>
+						<p class=''>${description}</p>
+						<p class=''>${readable_publish_date}</p>
+					</div>
+			</div>
+		`
+	}
+
+	const renderPostsList = (posts) => {
+		return posts
+			.filter((post) => post.cover_image)
+			.map((post) => renderPosts(post))
+			.join('')
+	}
+
+	const renderPostsSection = (posts) => {
+		POSTSECTION.innerHTML += renderPostsList(posts)
+	}
+
+	const init = async () => {
+		const posts = await getArticles(pageSize)
+		renderPostsSection(posts)
+		pageSize = 12
+	}
+
+	init()
+
+	window.addEventListener('scroll', async () => {
+		// Obtener el alto de la página
+		const scrollHeight = Math.max(
+			document.body.scrollHeight,
+			document.documentElement.scrollHeight,
+			document.body.offsetHeight,
+			document.documentElement.offsetHeight,
+			document.body.clientHeight,
+			document.documentElement.clientHeight
+		)
+
+		// Obtener la posición actual del scroll
+		const scrollTop =
+			window.pageYOffset ||
+			(document.documentElement || document.body.parentNode || document.body).scrollTop
+
+		// Obtener el alto de la ventana del navegador
+		const clientHeight = document.documentElement.clientHeight
+
+		// Comprobar si el usuario ha llegado al final de la página
+		if (scrollTop + clientHeight >= scrollHeight) {
+			page += 1
+			const newPosts = await getArticles()
+			renderPostsSection(newPosts)
+		}
+	})
+</script>
