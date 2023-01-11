@@ -4,94 +4,9 @@
 <section class='flex pt-12'>
 	<div class='flex items-center justify-center flex-wrap gap-x-10 gap-y-6' id='homePosts'></div>
 </section>
-<script type='module'>
-	const APIURL = 'https://dev.to/api/articles'
-	const POSTSECTION = document.querySelector('#homePosts')
-	const BOOKMARK = document.querySelector('#bookmark')
-	let page = 1
-	let pageSize = 24
-
-	let bookmark = JSON.parse(localStorage.getItem("bookmark")) || []
-    const SAVETOLOCALSTORAGE = (bookmarks) => {
-        return localStorage.setItem("bookmark", JSON.stringify(bookmarks))
-    }
-
-	const getArticles = async () => {
-		const url = `${APIURL}?state=fresh&per_page=${pageSize}&page=${page}`
-		try {
-			const response = await fetch(url)
-			const articles = await response.json()
-			return articles
-		} catch (e) {
-			console.log(e)
-			return null
-		}
-	}
-
-	const renderPosts = (posts) => {
-		if (!posts.cover_image) {
-			return
-		}
-		const { title, social_image, readable_publish_date, url } = posts
-		return `
-			<div class='flex flex-col items-center justify-center max-w-xs min-h-[380px] bg-[#1C1F26] border-[1px] border-[#a8b3cf33] rounded-xl py-2 px-2 gap-3'>
-				<div class='flex justify-end w-full px-2'>
-					<i class='fa-regular fa-bookmark bg-slate-700 h-8 w-8 flex items-center justify-center rounded-full' id='bookmark'></i>
-				</div>
-				<div class='flex flex-col items-start px-4 gap-2 min-h-[130px]'>
-					<a href='${url}' class='font-extrabold text-xl'>${title}</a>
-					<p class='text-left text-sm'>${readable_publish_date}</p>
-				</div>
-				<img src='${social_image}' class='rounded-xl'/>
-				<div class=''>
-				</div>
-			</div>
-		`
-	}
-
-	const renderPostsList = (posts) => {
-		return posts
-			.filter((post) => post.cover_image)
-			.map((post) => renderPosts(post))
-			.join('')
-	}
-
-	const renderPostsSection = (posts) => {
-		POSTSECTION.innerHTML += renderPostsList(posts)
-	}
-
-	const init = async () => {
-		const posts = await getArticles(pageSize)
-		renderPostsSection(posts)
-		pageSize = 12
-	}
+<script>
+	import { scrollHandler, init } from '@services/articles'
 
 	init()
-
-	window.addEventListener('scroll', async () => {
-		// Obtener el alto de la página
-		const scrollHeight = Math.max(
-			document.body.scrollHeight,
-			document.documentElement.scrollHeight,
-			document.body.offsetHeight,
-			document.documentElement.offsetHeight,
-			document.body.clientHeight,
-			document.documentElement.clientHeight
-		)
-
-		// Obtener la posición actual del scroll
-		const scrollTop =
-			window.pageYOffset ||
-			(document.documentElement || document.body.parentNode || document.body).scrollTop
-
-		// Obtener el alto de la ventana del navegador
-		const clientHeight = document.documentElement.clientHeight
-
-		// Comprobar si el usuario ha llegado al final de la página
-		if (scrollTop + clientHeight >= scrollHeight) {
-			page += 1
-			const newPosts = await getArticles()
-			renderPostsSection(newPosts)
-		}
-	})
+	scrollHandler()
 </script>
