@@ -24,21 +24,22 @@
 }
 
 /* Replace selection color 🕶️ */
-::-moz-selection { /* Code for Firefox */
-    background: var(--soft-coffee);
-  } 
-  ::selection {
-    background: var(--soft-coffee);
-  }
+::-moz-selection {
+	/* Code for Firefox */
+	background: var(--soft-coffee);
+}
+::selection {
+	background: var(--soft-coffee);
+}
 /* Scrollbar design */
 ::-webkit-scrollbar {
-    height: 8px;
-    width: 8px;
-  }
+	height: 8px;
+	width: 8px;
+}
 ::-webkit-scrollbar-corner {
-    background: #A8B3CF;
-  }
+	background: #a8b3cf;
+}
 ::-webkit-scrollbar-thumb {
-    background: #A8B3CF;
-    border-radius: 6px;
-  }
+	background: #a8b3cf;
+	border-radius: 6px;
+}
