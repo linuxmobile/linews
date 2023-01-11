@@ -12,7 +12,7 @@ export const ntfBtnHandler = () => {
 	})
 	DELETENOTIFY.addEventListener('click', () => {
 		const parent = DELETENOTIFY.parentNode
-        const elementHTML = parent.innerHTML
+		const elementHTML = parent.innerHTML
 		deletedElements.push(elementHTML)
 		parent.remove()
 		localStorage.setItem('deletedElements', JSON.stringify(deletedElements))
