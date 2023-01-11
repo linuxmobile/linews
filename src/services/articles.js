@@ -48,7 +48,7 @@ export const renderPosts = (posts) => {
 				<a href='${url}' class='font-extrabold text-xl'>${title}</a>
 				<p class='text-left text-sm'>${readable_publish_date}</p>
 			</div>
-			<img src='${social_image}' class='rounded-xl'/>
+			<img src='${social_image}' class='rounded-xl'alt='Imagen de: ${title}'/>
 			<div class=''>
 			</div>
 		</div>
