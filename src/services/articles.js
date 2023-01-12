@@ -6,12 +6,12 @@ let pageSize = 24
 export let tag = null
 
 export function updateTag(newTag) {
-    tag = newTag;
+	tag = newTag
 }
 
 export const getArticles = async () => {
 	let url = `${APIURL}?state=fresh&per_page=${pageSize}&page=${page}`
-	if (tag !== "popular" && tag !== null) {
+	if (tag !== 'popular' && tag !== null) {
 		url += `&tag=${tag}`
 	}
 	try {
