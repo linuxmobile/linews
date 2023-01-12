@@ -2,9 +2,15 @@ import { APIURL } from '@services/config'
 
 let page = 1
 let pageSize = 24
+let tag = null
+
+const categoryButtons = document.querySelectorAll('[data-category]');
 
 export const getArticles = async () => {
-	const url = `${APIURL}?state=fresh&per_page=${pageSize}&page=${page}`
+	let url = `${APIURL}?state=fresh&per_page=${pageSize}&page=${page}`
+	if (tag !== "popular" && tag !== null) {
+		url += `&tag=${tag}`
+	}
 	try {
 		const response = await fetch(url)
 		const articles = await response.json()
@@ -78,3 +84,16 @@ export const scrollHandler = () => {
 		}
 	})
 }
+
+categoryButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const category = button.dataset.category;
+        if (category === 'popular') {
+            tag = null;
+        } else {
+            tag = category;
+        }
+        POSTSECTION.innerHTML = '';
+        getArticles().then(posts => renderPostsSection(posts));
+    });
+})
