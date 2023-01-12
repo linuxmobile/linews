@@ -2,9 +2,9 @@
 import Notifications from './Notifications.astro'
 ---
 
-<header class='flex items-center justify-between p-2 px-5 border-b-[1px] border-b-[#a8b3cf33]'>
+<header class='flex items-center justify-between p-2 px-5 border-b-[1px] border-b-[#a8b3cf33] w-full fixed bg-[#0E1217]'>
 	<a href='/' class=''>🇦🇷 linu<strong class=''>NEWS</strong></a>
-	<nav class='flex items-center justify-center gap-6'>
+	<main class='flex items-center justify-center gap-6'>
 		<button
 			type='button'
 			aria-label='Botón de notificaciones'
@@ -20,7 +20,7 @@ import Notifications from './Notifications.astro'
 				id='bookmarkCounter'>0</p>
 			<img src='/docusaurus.svg' alt='Imagen de perfil aleatorio' class='w-10' />
 		</button>
-	</nav>
+	</main>
 </header>
 <Notifications />
 <script>
