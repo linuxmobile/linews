@@ -1,10 +1,13 @@
 import { APIURL } from '@services/config'
+import '@services/filter'
 
 let page = 1
 let pageSize = 24
-let tag = null
+export let tag = null
 
-const categoryButtons = document.querySelectorAll('[data-category]');
+export function updateTag(newTag) {
+    tag = newTag;
+}
 
 export const getArticles = async () => {
 	let url = `${APIURL}?state=fresh&per_page=${pageSize}&page=${page}`
@@ -84,16 +87,3 @@ export const scrollHandler = () => {
 		}
 	})
 }
-
-categoryButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const category = button.dataset.category;
-        if (category === 'popular') {
-            tag = null;
-        } else {
-            tag = category;
-        }
-        POSTSECTION.innerHTML = '';
-        getArticles().then(posts => renderPostsSection(posts));
-    });
-})
