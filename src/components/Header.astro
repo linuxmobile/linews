@@ -1,5 +1,6 @@
 ---
 import Notifications from './Notifications.astro'
+import MainMenu from './MainMenu.astro';
 ---
 
 <header class='z-[2] flex items-center justify-between p-2 px-5 border-b-[1px] border-b-[#a8b3cf33] w-full fixed bg-[#0E1217]'>
@@ -22,6 +23,7 @@ import Notifications from './Notifications.astro'
 		</button>
 	</main>
 </header>
+<MainMenu />
 <Notifications />
 <script>
 	import { ntfBtnHandler } from '@services/notification'
