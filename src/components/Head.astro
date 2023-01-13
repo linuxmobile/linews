@@ -1,35 +1,45 @@
 ---
-const {
-    title = 'IntegradorJS',
-    description = 'Bienvenido a casa <3',
-    image = ''
-} = Astro.props
+const { title = 'IntegradorJS', description = 'Bienvenido a casa <3', image = '' } = Astro.props
 ---
+
 <head>
-    <meta charset='utf-8' />
-    <meta name='viewport' content='width=device-width' />
-    <title>{title}</title>
-    <meta name='description' content={description} />
-    <meta name='theme-color' content='#0E0E0E' />
-    <link rel='icon' href='/favicon.svg' type='image/svg+xml' />
-    <link rel='mask-icon' href='/mask-icon.svg' color='#000000' />
+	<meta charset='utf-8' />
+	<meta name='viewport' content='initial-scale=1.0, width=device-width, viewport-fit=cover' />
+	<title>{title}</title>
+	<meta name='description' content={description} />
+	<meta name='theme-color' content='#151618' />
+	<meta name='msapplication-navbutton-color' content='#151618' />
+	<meta name='application-name' content='linuNEWS' />
+	<meta name='apple-mobile-web-app-capable' content='yes' />
+	<meta name='apple-mobile-web-app-status-bar-style' content='default' />
+	<meta name='apple-mobile-web-app-title' content='linuNEWS' />
+	<meta name='format-detection' content='telephone=no' />
+	<meta name='mobile-web-app-capable' content='yes' />
+	<meta name='msapplication-TileColor' content='#151618' />
+	<meta name='msapplication-tap-highlight' content='no' />
+	<link rel='icon' href='/favicon.svg' type='image/svg+xml' />
+	<link rel='mask-icon' href='/mask-icon.svg' color='#000000' />
 
-    <meta property='og:url' content='https://integradorJS.linu.dev/' />
-    <meta property='og:type' content='website' />
-    <meta property='og:title' content={title} />
-    <meta property='og:description' content={description} />
-    <meta property='og:image' content={image} />
+	<meta property='og:url' content='https://linunews.vercel.app/' />
+	<meta property='og:type' content='website' />
+	<meta property='og:title' content={title} />
+	<meta property='og:description' content={description} />
+	<meta property='og:image' content={image} />
+	<link rel='canonical' href='https://linunews.vercel.app/' />
 
-    <meta name='twitter:card' content='summary_large_image' />
-    <meta name='twitter:site' content='@linuxmobileok' />
-    <meta name='twitter:creator' content='@linuxmobileok' />
-    <meta name='twitter:title' content={title} />
-    <meta name='twitter:description' content={description} />
-    <meta name='twitter:image' content={image} />
+	<meta name='twitter:card' content='summary_large_image' />
+	<meta name='twitter:site' content='@linuxmobileok' />
+	<meta name='twitter:creator' content='@linuxmobileok' />
+	<meta name='twitter:title' content={title} />
+	<meta name='twitter:description' content={description} />
+	<meta name='twitter:image' content={image} />
 
-    <link rel="preload" href="/Mona-Sans.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/Hubot-Sans.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="/main.css">
+	<link rel='preload' href='/Mona-Sans.woff2' as='font' type='font/woff2' crossorigin />
+	<link rel='preload' href='/Hubot-Sans.woff2' as='font' type='font/woff2' crossorigin />
+	<link rel='stylesheet' href='/main.css' />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+	<link
+		rel='stylesheet'
+		href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css'
+	/>
 </head>
