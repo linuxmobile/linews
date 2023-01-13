@@ -1,4 +1,4 @@
-import { getArticles, POSTSECTION, renderPostsSection, tag, updateTag } from '@services/articles'
+import { getArticles, POSTSECTION, renderPostsSection, pageSize, tag, updateTag } from '@services/articles'
 
 const categoryButtons = document.querySelectorAll('[data-category]')
 
@@ -19,8 +19,9 @@ categoryButtons.forEach((button) => {
 		} else {
 			updateTag(category)
 		}
+		const currentPageSize = pageSize;
 		POSTSECTION.innerHTML = ''
-		getArticles().then((posts) => renderPostsSection(posts))
+		getArticles(currentPageSize).then((posts) => renderPostsSection(posts))
 
 		categoryButtons.forEach(btn => {
             Object.keys(categoryStyles).forEach(category => {

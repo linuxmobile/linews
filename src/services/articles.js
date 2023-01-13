@@ -3,14 +3,14 @@ import '@services/filter'
 
 const offset = 300;
 let page = 1
-let pageSize = 12
+export let pageSize = 12
 export let tag = null
 
 export function updateTag(newTag) {
 	tag = newTag
 }
 
-export const getArticles = async () => {
+export const getArticles = async (pageSize) => {
 	let url = `${APIURL}?top=30&per_page=${pageSize}&page=${page}`
 	if (tag !== 'popular' && tag !== null) {
 		url += `&tag=${tag}`
