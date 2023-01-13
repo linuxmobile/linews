@@ -63,7 +63,7 @@ export const renderPosts = (posts) => {
 				<img src='${user.profile_image_90}' class='rounded-full h-8 w-8' alt='Imagen de perfil de: ${user.name}'/>
 				<i class='fa-regular fa-bookmark bg-slate-700 h-8 w-8 flex items-center justify-center rounded-full' id='bookmark'></i>
 			</div>
-			<div class='flex flex-col items-start w-full px-4 gap-2 min-h-[130px]'>
+			<div class='flex flex-col items-start justify-between w-full px-4 gap-2 min-h-[130px]'>
 				<a href='${url}' class='font-extrabold text-xl max-w-[270px] h-[90px] line-clamp-3'>${title}</a>
 				<div class='flex items-center gap-2'>
 					<p class='text-left text-[13px] [line-height:18px]'>${readable_publish_date}</p>
