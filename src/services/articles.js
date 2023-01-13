@@ -10,7 +10,7 @@ export function updateTag(newTag) {
 	tag = newTag
 }
 
-export const getArticles = async (pageSize) => {
+export const getArticles = async () => {
 	let url = `${APIURL}?top=30&per_page=${pageSize}&page=${page}`
 	if (tag !== 'popular' && tag !== null) {
 		url += `&tag=${tag}`
