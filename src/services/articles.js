@@ -47,15 +47,19 @@ export const renderPosts = (posts) => {
 	if (!posts.cover_image) {
 		return
 	}
-	const { title, social_image, readable_publish_date, url } = posts
+	const { title, social_image, readable_publish_date, url, user, reading_time_minutes } = posts
 	return `
 		<div class='flex flex-col items-center justify-center max-w-xs min-h-[300px] bg-[#1C1F26] border-[1px] border-[#a8b3cf33] rounded-xl py-2 px-2 gap-3'>
-			<div class='flex justify-end w-full px-2'>
+			<div class='flex justify-between w-full px-3 pt-1'>
+				<img src='${user.profile_image_90}' class='rounded-full h-8 w-8' alt='Imagen de perfil de: ${user.name}'/>
 				<i class='fa-regular fa-bookmark bg-slate-700 h-8 w-8 flex items-center justify-center rounded-full' id='bookmark'></i>
 			</div>
 			<div class='flex flex-col items-start w-full px-4 gap-2 min-h-[130px]'>
 				<a href='${url}' class='font-extrabold text-xl max-w-[270px] h-[90px] line-clamp-3'>${title}</a>
-				<p class='text-left text-sm'>${readable_publish_date}</p>
+				<div class='flex items-center gap-2'>
+					<p class='text-left text-[13px] [line-height:18px]'>${readable_publish_date}</p>
+					<p class='text-left text-[13px] [line-height:18px]'>${reading_time_minutes} min read</p>
+				</div>
 			</div>
 			<img src='${social_image}' class='rounded-xl'alt='Imagen de: ${title}'/>
 			<div class=''>
