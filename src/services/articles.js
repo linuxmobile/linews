@@ -2,7 +2,7 @@ import { APIURL } from '@services/config'
 import '@services/filter'
 
 let page = 1
-let pageSize = 24
+let pageSize = 12
 export let tag = null
 
 export function updateTag(newTag) {
