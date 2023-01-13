@@ -1,6 +1,7 @@
 import { APIURL } from '@services/config'
 import '@services/filter'
 
+const offset = 300;
 let page = 1
 let pageSize = 12
 export let tag = null
@@ -40,7 +41,6 @@ export const renderPostsList = (posts) => {
 export const init = async () => {
 	const posts = await getArticles(pageSize)
 	renderPostsSection(posts)
-	pageSize = 12
 }
 
 export const renderPosts = (posts) => {
@@ -108,7 +108,7 @@ export const scrollHandler = () => {
 
 		const clientHeight = document.documentElement.clientHeight
 
-		if (scrollTop + clientHeight >= scrollHeight) {
+		if (scrollTop + clientHeight >= scrollHeight - offset) {
 			page += 1
 			const newPosts = await getArticles()
 			renderPostsSection(newPosts)
