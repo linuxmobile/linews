@@ -7,8 +7,22 @@ import Header from '@components/Header.astro'
 <!DOCTYPE html>
 <html lang='en'>
 	<Head />
-	<body class='bg-[#0E1217] text-slate-200'>
+	<body class='bg-base-100 text-base-content'>
 		<Header />
 		<Articles />
 	</body>
 </html>
+<script is:inline>
+	// ☝️ This script prevent the FART effect.
+	if (localStorage.getItem('theme') === null) {
+		document.documentElement.setAttribute('data-theme', 'dark')
+	} else document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))
+	// "theme" LocalStorage value is set by the package to remember user preference.
+	// The value is checked and applyed before rendering anything.
+</script>
+<script>
+	// import { menuHandler } from '@services/menu'
+	// menuHandler()
+	import { themeChange } from 'theme-change'
+	themeChange()
+</script>
