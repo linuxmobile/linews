@@ -4,21 +4,6 @@ import MainMenu from './MainMenu.astro'
 ---
 
 <header class='z-[2] flex items-center justify-end p-2 px-3 w-full fixed'>
-	<main class='flex items-center justify-center gap-6'>
-		<button
-			type='button'
-			aria-label='Botón de notificaciones'
-			class='bg-neutral w-8 h-8 rounded-lg'
-			id='notifyIcon'><i class='fa-regular fa-bell'></i>
-		</button>
-		<button
-			type='button'
-			aria-label='Botón para abrir bookmarks'
-			class='flex items-center justify-center'>
-			<p class='bg-neutral w-8 h-8 flex items-center justify-center rounded-l-lg pl-2' id='bookmarkCounter'>0</p>
-			<img src='/docusaurus.svg' alt='Imagen de perfil aleatorio' class='w-10' />
-		</button>
-	</main>
 </header>
 <MainMenu />
 <Notifications />
