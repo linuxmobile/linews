@@ -66,7 +66,7 @@ export const renderPosts = (posts) => {
 				<p class='text-sm text-neutral-content text-opacity-40 card-actions justify-between'>${readable_publish_date}</p>
 				<p class='text-sm text-neutral-content text-opacity-40 card-actions justify-end'>${reading_time_minutes} min read</p>
 			</div>
-			<a href='${url}' class='text-[#f0e6ff] min-h-[112px]'>
+			<a href='${url}' target='_blank' class='text-[#f0e6ff] min-h-[112px]'>
 				<h2 class='card-title line-clamp-2 font-mona-sans font-bold [font-stretch:ultra-expanded]'>${title}</h2>
 				<p class='font-mona-sans [font-stretch:expanded] text-neutral-content text-opacity-70'>${description}</p>
 			</a>
