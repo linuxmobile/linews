@@ -59,7 +59,7 @@ export const renderPosts = (posts) => {
 		public_reactions_count
 	} = posts
 	return `
-	<div class='card card-compact w-96 bg-neutral shadow-xl min-h-[420px]'>
+	<div class='card card-compact w-96 bg-neutral shadow-xl min-h-[420px] transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10'>
 		<figure><img src='${social_image}' alt='Imagen del post: ${title}' /></figure>
 		<div class='card-body h-full justify-between'>
 			<a href='${url}' class='text-[#f0e6ff]'>
