@@ -67,8 +67,8 @@ export const renderPosts = (posts) => {
 				<p class='font-mona-sans [font-stretch:expanded]'>${description}</p>
 			</a>
 			<div class='flex items-end justify-between'>
-				<div class='avatar'>
-					<div class='w-12 rounded-full'>
+				<div class='btn btn-ghost btn-circle avatar'>
+					<div class='w-10 rounded-full'>
 						<img src='${user.profile_image_90}' alt='Imagen del usuario: ${user.name}' />
 					</div>
 				</div>
