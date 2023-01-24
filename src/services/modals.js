@@ -4,7 +4,7 @@ const modal = () => {
 	return `
     <input type='checkbox' id='my-modal-3' class='modal-toggle' />
     <div class='modal backdrop-blur-sm'>
-    <div class='modal-box relative outline outline-1 outline-accent/30 max-w-[420px] overflow-y-hidden'>
+    <div class='modal-box relative outline outline-1 outline-accent/30 max-w-[420px] max-h-[calc(100vh-2.5rem)]'>
         <label for='my-modal-3' class='btn btn-sm btn-circle absolute right-2 top-2'>✕</label>
         <div class='flex items-center justify-center flex-col font-mona-sans'>
             <h3 class='text-lg font-bold w-full leading-none'>Logueate en LiNEWS!</h3>
@@ -32,7 +32,12 @@ const modal = () => {
                         <span class='label-text-alt'>Olvidaste tu contraseña?</span>
                     </label>
                 </div>
-                <button class='btn btn-sm'>Log in</button>
+                <button class='btn btn-sm btn-info'>Log in</button>
+            </div>
+            <div class='divider'></div>
+            <div class='flex justify-between items-center w-full max-w-xs'>
+                <span class='label-text-alt'>No tenés una cuenta?</span>
+                <button class='btn btn-sm'>Registrate</button>
             </div>
         </div>
     </div>
@@ -45,5 +50,5 @@ loginModal.innerHTML = modal()
 export const modalHandler = () => {
 	setTimeout(function () {
 		document.getElementById('my-modal-3').checked = true
-	}, 8000)
+	}, 7000)
 }
