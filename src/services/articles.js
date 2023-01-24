@@ -59,12 +59,12 @@ export const renderPosts = (posts) => {
 		public_reactions_count
 	} = posts
 	return `
-	<div class='card card-compact w-96 bg-neutral shadow-xl min-h-[400px]'>
+	<div class='card card-compact w-96 bg-neutral shadow-xl min-h-[420px]'>
 		<figure><img src='${social_image}' alt='Imagen del post: ${title}' /></figure>
 		<div class='card-body h-full justify-between'>
-			<a href='${url}'>
-				<h2 class='card-title line-clamp-2'>${title}</h2>
-				<p>${description}</p>
+			<a href='${url}' class='text-[#f0e6ff]'>
+				<h2 class='card-title line-clamp-2 font-mona-sans font-bold [font-stretch:ultra-expanded]'>${title}</h2>
+				<p class='font-mona-sans [font-stretch:expanded]'>${description}</p>
 			</a>
 			<div class='flex items-end justify-between'>
 				<div class='avatar'>
