@@ -48,7 +48,14 @@ const modal = () => {
 loginModal.innerHTML = modal()
 
 export const modalHandler = () => {
-	setTimeout(function () {
-		document.getElementById('my-modal-3').checked = true
-	}, 7000)
+	if (sessionStorage.getItem('modalShown') === null) {
+		sessionStorage.setItem('modalShown', 'false')
+	}
+
+	if (sessionStorage.getItem('modalShown') === 'false') {
+		setTimeout(function () {
+			document.getElementById('my-modal-3').checked = true
+			sessionStorage.setItem('modalShown', 'true')
+		}, 7000)
+	}
 }
