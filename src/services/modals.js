@@ -2,7 +2,7 @@ const loginModal = document.getElementById('loginModal')
 
 const modal = () => {
 	return `
-    <input type='checkbox' id='my-modal-3' class='modal-toggle' />
+    <input type='checkbox' id='my-modal-3' class='modal-toggle' aria-label='Login Modal' />
     <div class='modal backdrop-blur-sm'>
     <div class='modal-box relative outline outline-1 outline-accent/30 max-w-[420px] max-h-[calc(100vh-2.5rem)]'>
         <label for='my-modal-3' class='btn btn-sm btn-circle absolute right-2 top-2'>✕</label>
