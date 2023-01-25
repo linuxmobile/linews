@@ -50,3 +50,12 @@
 	box-sizing: border-box;
 	border: 0 solid;
 }
+
+.transition-fade {
+	transition: 0.4s;
+	opacity: 1;
+  }
+  
+  html.is-animating .transition-fade {
+	opacity: 0;
+  }

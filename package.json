@@ -23,6 +23,7 @@
     "theme-change": "2.3.0"
   },
   "devDependencies": {
+    "@swup/preload-plugin": "2.0.0",
     "autoprefixer": "10.4.13",
     "daisyui": "2.47.0",
     "eslint": "8.31.0",
@@ -33,7 +34,8 @@
     "eslint-plugin-promise": "6.1.1",
     "prettier": "2.8.1",
     "prettier-plugin-astro": "0.7.2",
-    "standard": "17.0.0"
+    "standard": "17.0.0",
+    "swup": "3.0.2"
   },
   "keywords": [],
   "author": "linuxmobile",
