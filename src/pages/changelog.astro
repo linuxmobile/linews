@@ -3,7 +3,6 @@ import Layout from '@layouts/Layout.astro';
 import { getCommits } from '@api/commits'
 
 const commits = await getCommits()
-console.log(commits)
 
 const formatDate = (date:string) => {
   const dateObject = new Date(date);
@@ -11,7 +10,7 @@ const formatDate = (date:string) => {
 }
 ---
 <Layout>
-  <section class='flex gap-4 items-center justify-center transition-fade font-mona-sans flex-wrap' id='swup'>
+  <section class='flex gap-4 items-center justify-center transition-fade font-mona-sans flex-wrap mt-10 mb-36' id='swup'>
     {
       commits?.map((commit: any) => (
         <div class='card w-80 sm:w-96 bg-base-200 shadow-xl min-h-[224px] transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 animate-fade animate-once animate-ease-in-out animate-fill-forwards'>
