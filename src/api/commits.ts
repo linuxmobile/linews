@@ -1,6 +1,6 @@
 export const getCommits = async (): Promise<any> => {
 	const data = await fetch(
-		`https://api.github.com/repos/linuxmobile/linews/commits?per_page=10`,
+		`https://api.github.com/repos/linuxmobile/linews/commits?per_page=12`,
 		{
 			headers: {
 				Authorization: `token ${import.meta.env.GITHUB_TOKEN}`

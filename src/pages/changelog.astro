@@ -1,0 +1,30 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { getCommits } from '@api/commits'
+
+const commits = await getCommits()
+console.log(commits)
+
+const formatDate = (date:string) => {
+  const dateObject = new Date(date);
+  return dateObject.toLocaleDateString('es-ES',{year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit'});
+}
+---
+<Layout>
+  <section class='flex gap-4 items-center justify-center transition-fade font-mona-sans flex-wrap' id='swup'>
+    {
+      commits?.map((commit: any) => (
+        <div class='card w-80 sm:w-96 bg-base-200 shadow-xl min-h-[224px] transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 animate-fade animate-once animate-ease-in-out animate-fill-forwards'>
+          <div class='card-body'>
+            <h2 class='card-title'>{commit.commit.message}</h2>
+            <p>{commit.commit.author.name}</p>
+            <p>{formatDate(commit.commit.author.date)}</p>
+            <div class='card-actions justify-end'>
+              <a href={commit.html_url} target='_blank' class='btn btn-sm btn-secondary font-medium'>cambios</a>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </section>
+</Layout>
