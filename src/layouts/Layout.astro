@@ -26,4 +26,8 @@ import Modals from '@components/Modals.astro'
 	// menuHandler()
 	import { themeChange } from 'theme-change'
 	themeChange()
+
+	import Swup from 'swup'
+    import SwupPreloadPlugin from '@swup/preload-plugin'
+	const swup = new Swup({})
 </script>

@@ -39,8 +39,10 @@ export const renderPostsList = (posts) => {
 }
 
 export const init = async () => {
-	const posts = await getArticles(pageSize)
-	renderPostsSection(posts)
+	if (POSTSECTION) {
+		const posts = await getArticles(pageSize)
+		renderPostsSection(posts)
+	}
 }
 
 export const renderPosts = (posts) => {
@@ -59,7 +61,7 @@ export const renderPosts = (posts) => {
 		public_reactions_count
 	} = posts
 	return `
-	<div class='card card-compact w-96 max-w-xs sm:max-w-none bg-neutral shadow-xl min-h-[420px] transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10'>
+	<div class='card card-compact w-96 max-w-xs sm:max-w-none bg-neutral shadow-xl min-h-[420px] transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 animate-fade animate-once animate-ease-in-out animate-fill-forwards'>
 		<figure><img src='${social_image}' alt='Imagen del post: ${title}' /></figure>
 		<div class='card-body h-full justify-between'>
 			<div class='flex items-end justify-between h-fit'>
