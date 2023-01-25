@@ -1,7 +1,8 @@
 ---
+import MainMenu from "./MainMenu.astro";
 ---
 
-<header class='z-[2] flex items-center justify-end py-4 px-3 w-full fixed'>
+<header class='z-[2] flex items-center justify-end py-4 px-3 w-full'>
 	<div class='flex items-center justify-center'>
 		<label for='themeselector' class='swap swap-rotate btn btn-circle btn-accent'>
 			<input type='checkbox' id='themeselector' aria-label='themeselector' data-toggle-theme="dark,light" />
@@ -20,3 +21,4 @@
 		</label>
 	</div>
 </header>
+<MainMenu />
