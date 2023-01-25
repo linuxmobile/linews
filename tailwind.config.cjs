@@ -56,7 +56,8 @@ module.exports = {
 	plugins: [
 		require('@tailwindcss/line-clamp'),
 		require('daisyui'),
-		require('tailwind-scrollbar')
+		require('tailwind-scrollbar'),
+		require('tailwindcss-animated')
 	],
 	variants: {
         scrollbar: ['rounded']
