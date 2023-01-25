@@ -1,11 +1,13 @@
 ---
-import MainMenu from "./MainMenu.astro";
+import MainMenu from './MainMenu.astro';
 ---
-
 <header class='z-[2] flex items-center justify-end py-4 px-3 w-full'>
+	<div class='flex items-center justify-start w-full pl-16 pt-2'>
+		<a href='/' class='font-extralight text-7xl font-mona-sans'>Li<strong class='font-black [font-stretch:ultra-expanded] hover:text-purple-600/80 transition-all duration-300'>NEWS</strong></a>
+	</div>
 	<div class='flex items-center justify-center'>
 		<label for='themeselector' class='swap swap-rotate btn btn-circle btn-accent'>
-			<input type='checkbox' id='themeselector' aria-label='themeselector' data-toggle-theme="dark,light" />
+			<input type='checkbox' id='themeselector' aria-label='themeselector' data-toggle-theme='dark,light' />
 			<svg
 				class='swap-on fill-current w-10 h-10'
 				xmlns='http://www.w3.org/2000/svg'
