@@ -70,7 +70,7 @@ export const renderPosts = (posts) => {
 			</div>
 			<a href='${url}' target='_blank' class='text-accent min-h-[112px]'>
 				<h2 class='card-title line-clamp-2 font-mona-sans font-bold [font-stretch:ultra-expanded]'>${title}</h2>
-				<p class='font-mona-sans [font-stretch:expanded] text-neutral-content text-opacity-70'>${description}</p>
+				<p class='font-mona-sans [font-stretch:expanded] text-neutral-content text-opacity-60'>${description}</p>
 			</a>
 			<div class='flex items-end justify-between'>
 				<div class='btn btn-ghost btn-circle avatar'>
