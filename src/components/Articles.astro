@@ -1,5 +1,5 @@
 ---
-import FilterButtons from '@components/FilterButtons.astro';
+import FilterButtons from '@components/FilterButtons.astro'
 ---
 
 <div class='pt-16'>
@@ -8,6 +8,15 @@ import FilterButtons from '@components/FilterButtons.astro';
 <section class='flex pt-12 items-center justify-center'>
 	<div class='flex items-center justify-center flex-wrap sm:gap-x-10 gap-y-6' id='homePosts'></div>
 </section>
+<div class='hidden' id='successModal'>
+	<div class='toast  transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 animate-fade animate-once animate-ease-in-out animate-fill-forwards'>
+		<div class='alert alert-info'>
+			<div>
+				<span class='' id='success'></span>
+			</div>
+		</div>
+	</div>
+</div>
 <script>
 	// import { bookmarkHandler } from '@services/bookmark'
 	import { scrollHandler, init } from '@services/articles'

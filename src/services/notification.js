@@ -1,20 +1,16 @@
-const NOTIFYBTN = document.querySelector('#notifyIcon')
-const NOTIFYSECTION = document.querySelector('#notifySection')
-const DELETENOTIFY = document.querySelector('#deleteNotify')
-const NOTIFYELEMENT = document.querySelector('#notifyElement')
+// const NOTIFYBTN = document.querySelector('#notifyBTN')
+const NOTIFYSTATUS = document.querySelector('#notifyStatus')
+// class 'badge'
+let bookmark = JSON.parse(localStorage.getItem('bookmark')) || []
 
-let deletedElements = []
-
-export const ntfBtnHandler = () => {
-	NOTIFYBTN.addEventListener('click', () => {
-		NOTIFYSECTION.classList.toggle('hidden')
-		NOTIFYSECTION.classList.toggle('flex')
-	})
-	DELETENOTIFY.addEventListener('click', () => {
-		const parent = DELETENOTIFY.parentNode
-		const elementHTML = parent.innerHTML
-		deletedElements.push(elementHTML)
-		parent.remove()
-		localStorage.setItem('deletedElements', JSON.stringify(deletedElements))
-	})
+export const notifyHandler = () => {
+	if (bookmark && bookmark.length > 0) {
+		NOTIFYSTATUS.classList.add('badge-sm')
+		NOTIFYSTATUS.classList.add('badge')
+		NOTIFYSTATUS.textContent = bookmark.length
+	} else {
+		NOTIFYSTATUS.classList.remove('badge-sm')
+		NOTIFYSTATUS.classList.remove('badge')
+		NOTIFYSTATUS.textContent = ''
+	}
 }

@@ -20,6 +20,8 @@ import Modals from '@components/Modals.astro'
 	} else document.documentElement.setAttribute('data-theme', localStorage.getItem('theme'))
 </script>
 <script>
+	import { notifyHandler } from '@services/notification'
 	import { themeChange } from 'theme-change'
 	themeChange()
+	notifyHandler()
 </script>
