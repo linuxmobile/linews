@@ -10,22 +10,25 @@ const formatDate = (date:string) => {
 }
 ---
 <Layout>
-  <section class='flex gap-4 items-center justify-center transition-fade font-mona-sans flex-wrap mt-10 mb-36' id='swup'>
-    {
-      commits?.map((commit: any) => (
-        <div class='card w-80 sm:w-96 bg-base-200 shadow-xl min-h-[224px] transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 animate-fade animate-once animate-ease-in-out animate-fill-forwards'>
-          <div class='card-body justify-between'>
-            <h2 class='card-title'>{commit.commit.message}</h2>
-            <div class='card-actions items-center justify-between'>
-              <div class='justify-between flex flex-col'>
-                <p class='text-primary text-opacity-40'>{commit.commit.author.name}</p>
-                <p class='text-primary text-opacity-40'>{formatDate(commit.commit.author.date)}</p>
+  <section class='flex flex-col items-start justify-center transition-fade font-mona-sans mb-36 my-10 sm:mt-16 ' id='swup'>
+    <h2 class='text-6xl font-bold [font-stretch:ultra-expanded] mx-10 sm:mx-20'>Código & Librerías</h2>
+    <div class='flex flex-wrap gap-6 items-center justify-center mt-10 '>
+        {
+          commits?.map((commit: any) => (
+            <div class='card w-80 sm:w-96 bg-base-200 shadow-xl min-h-[224px] transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 animate-fade animate-once animate-ease-in-out animate-fill-forwards'>
+              <div class='card-body justify-between'>
+                <h2 class='card-title'>{commit.commit.message}</h2>
+                <div class='card-actions items-center justify-between'>
+                  <div class='justify-between flex flex-col'>
+                    <p class='text-primary text-opacity-40'>{commit.commit.author.name}</p>
+                    <p class='text-primary text-opacity-40'>{formatDate(commit.commit.author.date)}</p>
+                  </div>
+                  <a href={commit.html_url} target='_blank' class='btn btn-sm btn-secondary font-medium'>cambios</a>
+                </div>
               </div>
-              <a href={commit.html_url} target='_blank' class='btn btn-sm btn-secondary font-medium'>cambios</a>
             </div>
-          </div>
-        </div>
-      ))
-    }
+          ))
+        }
+    </div>
   </section>
 </Layout>
