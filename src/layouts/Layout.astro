@@ -22,9 +22,14 @@ import Modals from '@components/Modals.astro'
 	// The value is checked and applyed before rendering anything.
 </script>
 <script>
-	// import { menuHandler } from '@services/menu'
-	// menuHandler()
+	// import { bookmarkHandler } from '@services/bookmark'
 	import { themeChange } from 'theme-change'
+	
+	// setTimeout(() => {
+	// 	bookmarkHandler()
+	// 	console.log(bookmarkHandler)
+	// }, 1000)
+
 	themeChange()
 
 	import Swup from 'swup'

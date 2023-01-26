@@ -1,5 +1,5 @@
 ---
-import FilterButtons from './FilterButtons.astro';
+import FilterButtons from '@components/FilterButtons.astro';
 ---
 
 <div class='pt-16'>
@@ -9,10 +9,8 @@ import FilterButtons from './FilterButtons.astro';
 	<div class='flex items-center justify-center flex-wrap sm:gap-x-10 gap-y-6' id='homePosts'></div>
 </section>
 <script>
-	import { scrollHandler, init } from '@services/articles'
 	// import { bookmarkHandler } from '@services/bookmark'
-
+	import { scrollHandler, init } from '@services/articles'
 	init()
-	// bookmarkHandler()
 	scrollHandler()
 </script>
