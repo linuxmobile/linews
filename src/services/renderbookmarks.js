@@ -3,7 +3,7 @@ const BOOKMARKSECTION = document.getElementById('bookmarkSection')
 const renderBookmarks = (bookmarks) => {
 	const { title, social_image, url, description, avatar } = bookmarks
 	return `
-		<div class='card card-compact lg:card-side bg-neutral shadow-xl sm:max-w-5xl'>
+		<div class='card card-compact lg:card-side bg-neutral shadow-xl sm:max-w-5xl transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 animate-fade animate-once animate-ease-in-out animate-fill-forwards'>
 			<figure class='max-w-lg'><img src='${social_image}' alt='imagen del post: ${title}' class='' /></figure>
 			<div class='card-body justify-between h-full'>
 				<a href='${url}' target='_blank' class='text-accent min-h-[112px]'>
