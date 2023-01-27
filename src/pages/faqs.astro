@@ -1,0 +1,47 @@
+---
+import Layout from '@layouts/Layout.astro';
+---
+<Layout>
+    <section class='flex flex-col items-start justify-center font-mona-sans mx-10 sm:mx-20 my-10 sm:mt-16 transition-all duration-500 animate-fade animate-once animate-ease-in-out animate-fill-forwards'>
+        <h2 class='text-5xl sm:text-6xl font-bold [font-stretch:ultra-expanded]'>Preguntas Frecuentes & To-Do</h2>
+        <div class='my-10 flex-col sm:flex gap-6'>
+            <div class='collapse collapse-arrow border border-primary bg-neutral rounded-box'>
+                <input type='checkbox' />
+                <div class='collapse-title text-xl font-medium [font-stretch:ultra-expanded]'>
+                  ¿Por qué Astro?
+                </div>
+                <div class='collapse-content font-medium text-secondary'> 
+                    <p>La razón principal es porque es un framework web fácil, rápido e intuitivo.</p>
+                    <p>Es muy parecido a ReactJS, sin embargo, soporta muchísimos frameworks como ReactJS, vue y más.</p>
+                </div>
+            </div>
+            <div class='collapse collapse-arrow border border-primary bg-neutral rounded-box'>
+                <input type='checkbox' />
+                <div class='collapse-title text-xl font-medium [font-stretch:ultra-expanded]'>
+                    ¿De dónde saqué las noticias?
+                </div>
+                <div class='collapse-content font-medium text-secondary'> 
+                    <p>Para las noticias decidí utilizar la API de <a href='https://developers.forem.com/api' class='text-info'>Dev.To</a></p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <div class='divider'></div>
+        <div class='my-10'>
+            <h3 class='font-bold [font-stretch:ultra-expanded] text-3xl'>Próximas Actualizaciones:</h3>
+            <div class='my-10'>
+                <ul class='flex-col gap-2 sm:flex '>
+                    <li class='flex items-center justify-start gap-x-3'><input type='checkbox' class='checkbox' disabled /> Mejorar el menú para que sea más adaptativo 🍔</li>
+                    <li class='flex items-center justify-start gap-x-3'><input type='checkbox' class='checkbox' disabled /> Mejorar las notificaciones de la web ⏰</li>
+                    <li class='flex items-center justify-start gap-x-3'><input type='checkbox' class='checkbox' disabled /> Crear un diseño mejorado para los commits de la sección<a href='/changelog' class='text-info'>Changelog</a></li>
+                    <li class='flex items-center justify-start gap-x-3'><input type='checkbox' class='checkbox' disabled /> Mostrar mejoras en el código en la sección<a href='/codes' class='text-info'>Code Snippets</a></li>
+                    <li class='flex items-center justify-start gap-x-3'><input type='checkbox' class='checkbox checkbox-success' checked disabled /> Agregar un "hover" y un "active" a los íconos del Menú</li>
+                    <li class='flex items-center justify-start gap-x-3'><input type='checkbox' class='checkbox' disabled />Agregar y configurar la opción "Share". Para poder compartir los artículos.</li>
+                    <li class='flex items-center justify-start gap-x-3'><input type='checkbox' class='checkbox' disabled />...</li>
+                    <li class='flex items-center justify-start gap-x-3'><input type='checkbox' class='checkbox' disabled />...</li>
+                    <li class='flex items-center justify-start gap-x-3'><input type='checkbox' class='checkbox' disabled />...</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</Layout>
