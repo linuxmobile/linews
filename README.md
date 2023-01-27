@@ -1,23 +1,24 @@
-# Welcome to [Astro](https://astro.build)
+# Bienvenido a [LiNEWS](https://linews.vercel.app/)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/s/github/withastro/astro/tree/latest/examples/basics)
+[![Creado con Astro](https://astro.build/assets/press/full-logo-light.svg)](https://astro.build/)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+> 🧑‍🚀 **Una breve introducción** sobre el sitio web.
 
-![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+![Screenshot](https://i.imgur.com/Xd2Au0F.png)
 
-## 🚀 Project Structure
+## 🚀 Estructura del Sitio
 
-Inside of your Astro project, you'll see the following folders and files:
+Dentro del proyecto encontramos la siguiente estructura:
 
 ```
 /
 ├── public/
-│   └── favicon.svg
+│   └── main.css
 ├── src/
+│   ├── api/
+│   │   └── commits.ts
 │   ├── components/
-│   │   └── Card.astro
+│   │   └── Articles.astro
 │   ├── layouts/
 │   │   └── Layout.astro
 │   └── pages/
@@ -25,25 +26,19 @@ Inside of your Astro project, you'll see the following folders and files:
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🧞 Comandos
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Todos los comandos se corren desde la raíz:
 
-Any static assets, like images, can be placed in the `public/` directory.
+| Comando                 | Accion                                                            |
+| :---------------------  | :-----------------------------------------------------------------|
+| `pnpm install`          | Instala las dependencias                                          |
+| `pnpm run dev`          | Inicia el servidor local en `localhost:3000`                      |
+| `pnpm run build`        | Construye el sitio de producción para `./dist/`                   |
+| `pnpm run preview`      | Vista previa de su compilación localmente, antes de implementar   |
+| `pnpm run astro ...`    | Ejecutar comandos CLI como `astro add`, `astro preview`                |
+| `pnpm run astro --help` | Obtenga ayuda para usar el Astro Cli                                      |
 
-## 🧞 Commands
+## 👀 ¿Quieres aprender más?
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                | Action                                             |
-| :--------------------- | :------------------------------------------------- |
-| `npm install`          | Installs dependencies                              |
-| `npm run dev`          | Starts local dev server at `localhost:3000`        |
-| `npm run build`        | Build your production site to `./dist/`            |
-| `npm run preview`      | Preview your build locally, before deploying       |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
-| `npm run astro --help` | Get help using the Astro CLI                       |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+No dude en consultar [la documentación](https://docs.astro.build) O pasarte por el [Servidor Discord](https://astro.build/chat) de Astro.
