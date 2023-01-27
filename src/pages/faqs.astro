@@ -22,7 +22,15 @@ import Layout from '@layouts/Layout.astro';
                 </div>
                 <div class='collapse-content font-medium text-secondary'> 
                     <p>Para las noticias decidí utilizar la API de <a href='https://developers.forem.com/api' class='text-info'>Dev.To</a></p>
-                    <p></p>
+                </div>
+            </div>
+            <div class='collapse collapse-arrow border border-primary bg-neutral rounded-box'>
+                <input type='checkbox' />
+                <div class='collapse-title text-xl font-medium [font-stretch:ultra-expanded]'>
+                    ¿Cómo hice la lista de cambios?
+                </div>
+                <div class='collapse-content font-medium text-secondary'> 
+                    <p>La lista de cambios es prácticamente una llamada a la API de Github. Utilizando un token único renderizo los commits en el DOM con Javascript.</p>
                 </div>
             </div>
         </div>
