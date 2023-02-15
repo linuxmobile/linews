@@ -1,0 +1,76 @@
+---
+layout: '../layouts/CodeLayout.astro'
+title: 'Códigos y Librerías'
+---
+
+# Código y Librerías
+
+## Librerías:
+
+<div class='btn gap-2'>
+    <svg width='2em' height='2em' viewBox='0 0 1280 1280' fill='none' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' clip-rule='evenodd' d='M815.039 94.644c9.719 12.065 14.675 28.346 24.587 60.909l216.544 711.349c-80.063-41.534-167.098-71.489-258.889-87.65L656.29 302.798a18.351 18.351 0 0 0-35.21.055L481.795 779.011c-92.216 16.089-179.649 46.098-260.054 87.782l217.606-711.405h.001c9.943-32.506 14.914-48.759 24.634-60.803A79.994 79.994 0 0 1 496.4 70.6c14.36-5.772 31.356-5.772 65.349-5.772h155.425c34.038 0 51.056 0 65.429 5.784a79.997 79.997 0 0 1 32.436 24.032ZM840.951 900.754c-35.698 30.525-106.949 51.343-189.022 51.343-100.732 0-185.162-31.36-207.566-73.536-8.009 24.171-9.805 51.835-9.805 69.507 0 0-5.277 86.772 55.078 147.132 0-31.34 25.406-56.74 56.745-56.74 53.716 0 53.655 46.86 53.606 84.88l-.003 3.39c0 57.71 35.271 107.18 85.432 128.04-7.492-15.41-11.695-32.72-11.695-51 0-55.04 32.313-75.54 69.867-99.36 29.881-18.95 63.08-40 85.96-82.24 11.938-22.04 18.717-47.277 18.717-74.102 0-16.495-2.563-32.392-7.314-47.314Z' fill='#fff'/></svg>
+    <a href='https://astro.build/' target='_blank' class=''><span class=''>Astro</span></a>
+</div>
+<label class='label'>
+    <span class='label-text-alt'>Un framework Web 'Todo en UNO'. Enfocado en el contenido.</span>
+</label>
+
+<div class='btn gap-2'>
+    <svg viewBox='0 0 256 154' aria-label='Tailwind CSS' class='h-8 w-8 sm:h-10 sm:w-10 lg:h-12 lg:w-12 transition saturate-50 hover:saturate-100' width='64' height='64' astro-icon='logos:tailwindcss-icon'><defs><linearGradient id='astroicon:logos:tailwindcss-icona' x1='-2.778%' x2='100%' y1='32%' y2='67.556%'><stop offset='0%' stop-color='#2298BD'></stop><stop offset='100%' stop-color='#0ED7B5'></stop></linearGradient></defs><path fill='url(#astroicon:logos:tailwindcss-icona)' d='M128 0C93.867 0 72.533 17.067 64 51.2 76.8 34.133 91.733 27.733 108.8 32c9.737 2.434 16.697 9.499 24.401 17.318C145.751 62.057 160.275 76.8 192 76.8c34.133 0 55.467-17.067 64-51.2-12.8 17.067-27.733 23.467-44.8 19.2-9.737-2.434-16.697-9.499-24.401-17.318C174.249 14.743 159.725 0 128 0zM64 76.8C29.867 76.8 8.533 93.867 0 128c12.8-17.067 27.733-23.467 44.8-19.2 9.737 2.434 16.697 9.499 24.401 17.318C81.751 138.857 96.275 153.6 128 153.6c34.133 0 55.467-17.067 64-51.2-12.8 17.067-27.733 23.467-44.8 19.2-9.737-2.434-16.697-9.499-24.401-17.318C110.249 91.543 95.725 76.8 64 76.8z'></path></svg>
+    <a href='https://tailwindcss.com/' target='_blank' class=''><span class=''>TailwindCSS</span></a>
+</div>
+<label class='label'>
+    <span class='label-text-alt'>Un framework CSS. Pensado para trabajar más rápido.</span>
+</label>
+
+<div class='btn gap-2'>
+    <img src='https://swup.js.org/assets/images/swup-logo-white.svg' alt='' class='w-8'>
+    <a href='https://swup.js.org/' target='_blank' class=''><span class=''>SwapJS</span></a>
+</div>
+<label class='label'>
+    <span class='label-text-alt'>Una librería de Transiciones entre páginas.</span>
+</label>
+
+<div class='btn gap-2'>
+    <a href='' target='_blank' class=''><span class=''>DaisyUI</span></a>
+</div>
+<label class='label'>
+    <span class='label-text-alt'>Una librería de componentes para TailwindCSS</span>
+</label>
+
+<div class='divider'></div>
+
+## Códigos:
+
+<div class='mockup-window border bg-base-200 mt-10 text-sm'>
+
+~~~ js
+categoryButtons.forEach((button) => {
+	button.addEventListener('click', () => {
+		const category = button.dataset.category
+		if (category === 'popular') {
+			updateTag(null)
+		} else {
+			updateTag(category)
+		}
+		POSTSECTION.innerHTML = ''
+		getArticles().then((posts) => renderPostsSection(posts))
+
+		categoryButtons.forEach((btn) => {
+			Object.keys(categoryStyles).forEach((category) => {
+				categoryStyles[category].forEach((className) => {
+					btn.classList.remove(className)
+				})
+			})
+		})
+		categoryStyles[category].forEach((className) => {
+			button.classList.add(className)
+		})
+	})
+})
+~~~
+
+</div>
+<label class='label'>
+    <span class='label-text-alt'>Porción del código de los filtros.</span>
+</label>
