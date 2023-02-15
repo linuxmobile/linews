@@ -55,6 +55,7 @@ module.exports = {
 	},
 	plugins: [
 		require('@tailwindcss/line-clamp'),
+		require('@tailwindcss/typography'),
 		require('daisyui'),
 		require('tailwind-scrollbar'),
 		require('tailwindcss-animated')
